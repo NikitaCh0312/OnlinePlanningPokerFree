@@ -35,7 +35,7 @@ WebApplication Configure(WebApplication app)
         app.UseSwaggerUI();
     }
 
-
+    app.UseRouting();
     app.UseCors(builder => builder.AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader());
