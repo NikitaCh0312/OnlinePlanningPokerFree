@@ -2,5 +2,7 @@
 
 public enum GameStatus
 {
-    
+    Iddle,
+    Preflop,
+    Showdown,
 }
