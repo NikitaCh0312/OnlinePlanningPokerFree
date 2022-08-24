@@ -19,7 +19,7 @@ public class RegistrationController : ControllerBase
     }
 
     [HttpGet("{nickname}")]
-    public async Task<PlayerRegistrationDto> Authorize(string nickname)
+    public async Task<PlayerRegistrationDto> Register(string nickname)
     {
         return await _mediator.Send(new PlayerRegistrationCommand() { Nickname = nickname });
     }
