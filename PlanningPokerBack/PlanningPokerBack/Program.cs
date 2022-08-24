@@ -6,15 +6,17 @@ using PlanningPokerBack.Hubs;
 using UseCases.Handlers.Registration.Commands;
 
 var builder = WebApplication.CreateBuilder(args);
-ConfigureServices(builder.Services);
+ConfigureServices(builder.Services, builder.Configuration);
 builder.WebHost.UseUrls("http://0.0.0.0:5000");
 
 var app = builder.Build();
 Configure(app).Run();
 
 
-void ConfigureServices(IServiceCollection services)
+void ConfigureServices(IServiceCollection services, IConfiguration configuration)
 {
+    services.AddJwtAuthentication(configuration);
+    
     var useCasesAssembly = typeof(PlayerRegistrationCommandHandler).GetTypeInfo().Assembly;
     services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
