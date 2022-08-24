@@ -4,15 +4,16 @@ using System.Text;
 using ApplicationServices.Interfaces;
 using Microsoft.IdentityModel.Tokens;
 
+
 namespace ApplicationServices.Implementations;
 
 public class JwtTokenGenerator: IJwtTokenGenerator
 {
     private readonly JwtConfiguration _jwtConfiguration;
     
-    public JwtTokenGenerator(JwtConfiguration configuration)
+    public JwtTokenGenerator(JwtConfiguration jwtConfiguration)
     {
-        _jwtConfiguration = configuration;
+        _jwtConfiguration = jwtConfiguration;
     }
     
     public string CreateAccessToken(string userId, string nickname)
