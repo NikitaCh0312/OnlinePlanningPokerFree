@@ -18,6 +18,21 @@ public class PlanningPokerHub: Hub
         
     }
 
+    public async Task remove_player_from_game()
+    {
+        
+    }
+    
+    public async Task set_player_card()
+    {
+        
+    }
+    
+    public async Task change_game_status()
+    {
+        
+    }
+    
     //returns state of game to caller
     public async Task get_game_state()
     {
