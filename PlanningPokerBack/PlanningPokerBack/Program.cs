@@ -42,7 +42,7 @@ WebApplication Configure(WebApplication app)
     }
 
     app.UseRouting();
-    app.UseCors(builder => builder.AllowAnyOrigin()
+    app.UseCors(policyBuilder => policyBuilder.AllowAnyOrigin()
         .AllowAnyMethod()
         .AllowAnyHeader());
 
