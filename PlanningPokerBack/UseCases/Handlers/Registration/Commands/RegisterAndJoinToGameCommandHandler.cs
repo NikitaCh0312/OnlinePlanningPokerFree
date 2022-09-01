@@ -38,6 +38,8 @@ public class RegisterAndJoinToGameCommandHandler:IRequestHandler<RegisterAndJoin
         };
         game.Players.Add(player);
 
+        await _gameStorage.UpdateGameAsync(game);
+        
         return new JoinToGameResultDto()
         {
             Success = true,

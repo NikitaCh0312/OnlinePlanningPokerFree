@@ -16,6 +16,8 @@ public class GameStorage:IGameStorage
     public async Task<Game?> GetGameAsync(string id)
     {
         var game = await _cache.GetStringAsync(id);
+        if (game == null)
+            return null;
         return JsonConvert.DeserializeObject<Game>(game);
     }
 

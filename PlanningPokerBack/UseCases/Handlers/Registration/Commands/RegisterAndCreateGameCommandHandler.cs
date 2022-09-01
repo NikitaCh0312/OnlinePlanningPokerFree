@@ -32,6 +32,7 @@ public class RegisterAndCreateGameCommandHandler:IRequestHandler<RegisterAndCrea
             Id = Guid.NewGuid().ToString("N"),
             Nickname = request.Nickname
         };
+        game.Players = new List<Player>();
         game.Players.Add(player);
         await _gameStorage.AddGameAsync(game);
         
