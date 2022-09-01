@@ -2,7 +2,11 @@
 
 public class GameRegistrationDto
 {
-    public bool Result { set; get; }
+    public bool Success { set; get; }
+    
+    public string Reason { set; get; }
+    
+    public string GameId { set; get; }
     
     public string JwtToken { set; get; }
 }

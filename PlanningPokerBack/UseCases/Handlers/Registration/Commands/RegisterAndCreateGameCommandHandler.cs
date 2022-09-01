@@ -22,12 +22,12 @@ public class RegisterAndCreateGameCommandHandler:IRequestHandler<RegisterAndCrea
     
     public async Task<GameRegistrationDto> Handle(RegisterAndCreateGameCommand request, CancellationToken cancellationToken)
     {
-        Entities.Game game = new Entities.Game()
+        var game = new Entities.Game()
         {
             Id = Guid.NewGuid().ToString("N"),
             Status = GameStatus.Iddle,
         };
-        Player player = new Player()
+        var player = new Player()
         {
             Id = Guid.NewGuid().ToString("N"),
             Nickname = request.Nickname
@@ -37,7 +37,9 @@ public class RegisterAndCreateGameCommandHandler:IRequestHandler<RegisterAndCrea
         
         return new GameRegistrationDto()
         {
-            Result = true,
+            Success = true,
+            Reason = "game created",
+            GameId = game.Id,
             JwtToken = _jwtTokenGenerator.CreateAccessToken(player.Id, player.Nickname)
         };
     }
