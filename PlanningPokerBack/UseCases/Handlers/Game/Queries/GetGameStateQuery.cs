@@ -1,6 +1,9 @@
-﻿namespace UseCases.Handlers.Game.Queries;
+﻿using MediatR;
+using UseCases.Handlers.Game.Dtos;
 
-public class GetGameStatusQuery
+namespace UseCases.Handlers.Game.Queries;
+
+public class GetGameStatusQuery: IRequest<GameStateDto>
 {
-    
+    public string GameId { set; get; }
 }

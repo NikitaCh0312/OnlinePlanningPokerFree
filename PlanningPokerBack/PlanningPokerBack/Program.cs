@@ -26,7 +26,9 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddSignalRWithAddition();
     services.AddCors();
     services.AddMediatR(useCasesAssembly);
-    
+    services.AddAutoMapper(useCasesAssembly);
+    services.AddFluentValidation(useCasesAssembly);
+
 }
 
 WebApplication Configure(WebApplication app)
