@@ -28,6 +28,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddMediatR(useCasesAssembly);
     services.AddAutoMapper(useCasesAssembly);
     services.AddFluentValidation(useCasesAssembly);
+    services.AddApplicationInfrastructure();
 
 }
 

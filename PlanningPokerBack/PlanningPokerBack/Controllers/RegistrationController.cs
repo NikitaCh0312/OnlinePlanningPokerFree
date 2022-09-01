@@ -18,9 +18,15 @@ public class RegistrationController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("{nickname}")]
-    public async Task<GameRegistrationDto> Register(string nickname)
+    [HttpGet("/register_create/{nickname}")]
+    public async Task<GameRegistrationDto> RegisterAndCreateGame(string nickname)
     {
         return await _mediator.Send(new RegisterAndCreateGameCommand() { Nickname = nickname });
+    }
+    
+    [HttpGet("/register_join/{nickname}/{game_id}")]
+    public async Task<JoinToGameResultDto> RegisterAndJoinToGame(string nickname, string gameId)
+    {
+        return await _mediator.Send(new RegisterAndJoinToGameCommand() { Nickname = nickname, GameId = gameId});
     }
 }
