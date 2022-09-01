@@ -1,6 +1,6 @@
 ﻿namespace UseCases.Handlers.Registration.Dtos;
 
-public class PlayerRegistrationDto
+public class GameRegistrationDto
 {
     public bool Result { set; get; }
     

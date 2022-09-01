@@ -18,7 +18,7 @@ void ConfigureServices(IServiceCollection services, IConfiguration configuration
     services.AddJwtAuthentication(configuration);
     services.AddCacheStorage(configuration);
     
-    var useCasesAssembly = typeof(PlayerRegistrationCommandHandler).GetTypeInfo().Assembly;
+    var useCasesAssembly = typeof(RegisterAndCreateGameCommandHandler).GetTypeInfo().Assembly;
     services.AddControllers();
     // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
     services.AddEndpointsApiExplorer();
