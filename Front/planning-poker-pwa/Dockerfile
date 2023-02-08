@@ -4,12 +4,15 @@ WORKDIR /app
 
 COPY package.json /app
 
-RUN npm install --legacy-peer-deps
+RUN npm install 
+RUN npm install serve 
 
 COPY . /app
+
+RUN npm run build
 
 ENV SERVER_API_URL="http://localhost:5000"
 
 EXPOSE 3000
 
-CMD ["npm", "start"]
+CMD [ "npx", "serve", "build" ]
