@@ -1,6 +1,12 @@
 import { Button, TextField, Typography } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 
 export function LoginView(): JSX.Element {
+  const navigate = useNavigate();
+
+  const handleOnClick = () => {
+    navigate("/game");
+  };
   return (
     <div
       style={{
@@ -12,7 +18,14 @@ export function LoginView(): JSX.Element {
       }}
     >
       <Typography>Planning poker</Typography>
-      <Button sx={{ backgroundColor: "#FF0000" }}> Создать новую игру</Button>
+      <Button sx={{ backgroundColor: "#FF0000" }} onClick={handleOnClick}>
+        {" "}
+        Создать новую игру
+      </Button>
+      <Typography>Game test</Typography>
+      <div>
+        <Link to="/game">Game</Link>
+      </div>
       <Typography>Подключиться к игре</Typography>
       <TextField></TextField>
     </div>
